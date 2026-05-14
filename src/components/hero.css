@@ -202,3 +202,29 @@ body {
   font-family: "Yanone Kaffeesatz", sans-serif;
   font-optical-sizing: auto;
 }
+
+.hero-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.view-full-btn {
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #ed7fa9 0%, #ef38a3 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.view-full-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+

@@ -5,10 +5,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': {
-        target: 'https://superheroapi.com',
+      '/api/dcadb1a7a96dae155e42d2c82c47c6d7': {
+        target: 'https://www.superheroapi.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/api')
+        rewrite: (path) => path.replace(/^\/api/, '/api.php')
       }
     }
   }

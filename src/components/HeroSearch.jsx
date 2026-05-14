@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import HeroDetails from './HeroDetails'
 import './hero.css'
 
@@ -6,6 +7,7 @@ const API_TOKEN = 'dcadb1a7a96dae155e42d2c82c47c6d7'
 const API_BASE = `/api/${API_TOKEN}`
 
 export default function HeroSearch() {
+  const navigate = useNavigate()
   const popularNames = [
     'Batman',
     'Superman',
@@ -145,9 +147,18 @@ export default function HeroSearch() {
 
       <div className="hero-grid">
         {list.map((hero) => (
-          <div key={hero.id} className="hero-card" onClick={() => openHero(hero.id)}>
-            <img className="hero-image" src={hero.image?.url} alt={hero.name} />
-            <div className="hero-name">{hero.name}</div>
+          <div key={hero.id} className="hero-card-wrapper">
+            <div className="hero-card" onClick={() => openHero(hero.id)}>
+              <img className="hero-image" src={hero.image?.url} alt={hero.name} />
+              <div className="hero-name">{hero.name}</div>
+            </div>
+            <button 
+              className="view-full-btn"
+              onClick={() => navigate(`/hero/${hero.id}`)}
+              title="Ver página completa con comentarios"
+            >
+              Ver detalles ➜
+            </button>
           </div>
         ))}
       </div>
