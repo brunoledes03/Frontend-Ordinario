@@ -4,7 +4,9 @@ import HeroDetails from './HeroDetails'
 import './hero.css'
 
 const API_TOKEN = 'dcadb1a7a96dae155e42d2c82c47c6d7'
-const API_BASE = `/api/${API_TOKEN}`
+const API_BASE = import.meta.env.DEV 
+  ? `/api/${API_TOKEN}` 
+  : `https://www.superheroapi.com/api.php/${API_TOKEN}`
 
 export default function HeroSearch() {
   const navigate = useNavigate()
